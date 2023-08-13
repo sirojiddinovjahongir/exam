@@ -46,39 +46,33 @@ body {
   flex-direction: column;
   height: 100%;
   background-color: $black-color;
-  font-family: $main-ff;
-  color: $grey-color;
-  font-weight: 500;
-  line-height: $main-lh;
-  font-size: $main-fs;
 }
 
 .container {
   width: 100%;
-  max-width: 1210px; // *
+  max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 5rem; // *
-  padding-right: 5rem; // *
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
-
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 770px) {
   .container {
     padding-right: 3rem;
     padding-left: 3rem;
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media screen and (max-width: 385px) {
   .container {
     padding-right: 1.6rem;
     padding-left: 1.6rem;
   }
 }
-.social-icon {
+.header-icons {
   &:hover {
     path {
-      fill: $green-color;
+      fill: $light-green-color;
     }
   }
 }
