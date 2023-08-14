@@ -10,7 +10,12 @@
   // outline: ;
   // outline-offset: ;
 }
-
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  outline-offset: 2px;
+}
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
@@ -50,29 +55,22 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1210px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 3rem;
-  padding-right: 3rem;
-}
-@media screen and (max-width: 770px) {
-  .container {
-    padding-right: 3rem;
-    padding-left: 3rem;
-  }
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media screen and (max-width: 375px) {
   .container {
     padding-right: 1.6rem;
     padding-left: 1.6rem;
-  }
-}
-.header-icons {
-  &:hover {
-    path {
-      fill: $light-green-color;
-    }
   }
 }

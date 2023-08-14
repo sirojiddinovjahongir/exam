@@ -316,6 +316,13 @@ template {
   box-sizing: border-box;
 }
 
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  outline-offset: 2px;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 62.5%;
@@ -356,29 +363,25 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1170px;
+  max-width: 1210px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 768px) {
   .container {
-    padding-right: 3rem;
     padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 375px) {
   .container {
     padding-right: 1.6rem;
     padding-left: 1.6rem;
   }
 }
-.header-icons:hover path {
-  fill: #4ee1a0;
-}
-
 /* space-grotesk-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -504,11 +507,12 @@ button {
 
 .header-hero {
   position: relative;
-  margin-block-start: 0px;
+  margin-block-start: 0;
+  padding-right: 100px;
 }
 
 .hero-container {
-  max-width: 1230px;
+  display: flex;
   padding-top: 8.7rem;
   padding-bottom: 8.7rem;
   position: relative;
@@ -521,9 +525,15 @@ button {
   margin-top: -5rem;
 }
 .hero-container .hero-title {
+  color: #ffffff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 8.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2.5px;
   width: 100%;
   margin-bottom: 4.3rem;
-  color: #ffffff;
 }
 .hero-container p {
   max-width: 445px;
@@ -559,7 +569,7 @@ button {
 .hero-image-bg {
   position: absolute;
   top: -17.4rem;
-  right: -3.1rem;
+  right: -8rem;
   z-index: -1;
 }
 
@@ -583,7 +593,7 @@ button {
 .hero-circle {
   position: absolute;
   bottom: 9.5rem;
-  right: 350px;
+  right: 300px;
 }
 
 .hero-hr {
@@ -592,63 +602,41 @@ button {
   height: 2px;
 }
 
-@media screen and (max-width: 1325px) {
-  .hero-title {
-    max-width: 445px;
-    width: 100%;
-    font-size: 7.2rem;
-    letter-spacing: -2.05;
-    margin-bottom: 6rem;
-  }
-  .hero-description {
-    margin-bottom: 3.4rem;
-  }
-  .hero-image-bg {
-    right: 0;
-  }
-  .hero-circle {
-    top: 450px;
-    right: 0;
-  }
-  .header {
-    background: url(../images/svg/ovalimage.svg);
-    background-repeat: no-repeat;
-    background-position: left -265px top 86px;
-  }
-}
-@media screen and (max-width: 645px) {
-  .hero-info {
-    width: 100%;
+@media screen and (max-width: 375px) {
+  .header-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
-  .header-container {
-    flex-direction: column;
-    gap: 2rem;
+  .header-content {
+    padding-left: 90px;
+    margin-bottom: 50px;
   }
   .header {
-    background: url(../images/svg/ovalimage.svg);
+    background-image: url(../images/svg/ovalimage.svg);
     background-repeat: no-repeat;
     background-position: left -272px top 100px;
-    margin-bottom: 30rem;
+    margin-bottom: 3rem;
   }
   .header-hero-content {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 323px;
     text-align: center;
     max-width: 345px;
     width: 100%;
+    height: 244px;
+    margin-bottom: 8rem;
   }
-  .header-hero-content h1 {
+  .header-hero-content .hero-title {
     font-size: 4rem;
     margin-bottom: 2.4rem;
   }
-  .header-hero-content p {
+  .header-hero-content .hero-description {
     margin-bottom: 2.4rem;
   }
   .hero-image-bg {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     top: -165px;
@@ -657,7 +645,7 @@ button {
     width: 234px;
     height: 400px;
   }
-  .hero-img {
+  .hero-picture {
     width: 174px;
     height: 38.3rem;
   }
@@ -980,15 +968,6 @@ main {
   margin-block-end: 32px;
 }
 
-.visually-hidden {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
 .contact-control.align-right {
   display: flex;
   flex-direction: row-reverse;
@@ -1007,20 +986,20 @@ main {
   background-color: #4ee1a0;
 }
 
-.button-text:hover {
+.contact-control:hover {
   position: relative;
 }
-.button-text:hover::before {
+.contact-control:hover::before {
   display: inline-block;
   position: absolute;
   content: "";
   height: 2px;
   width: 0%;
   background-color: #4ee1a0;
-  bottom: -5px;
+  bottom: 0;
   transition: 0.4s;
 }
-.button-text:hover:hover::before {
+.contact-control:hover:hover::before {
   width: 100%;
 }
 
@@ -1029,65 +1008,9 @@ main {
   border: none;
 }
 
-@media screen and (max-width: 1290px) {
-  .projects-card-links {
-    visibility: visible;
-    opacity: 1;
-  }
-  .projects-card-img:hover .projects-btn {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
-@media screen and (max-width: 1200px) {
-  li {
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-@media screen and (max-width: 1060px) {
-  .works {
-    background-image: url(../images/svg/ovalimage.svg);
-    background-repeat: no-repeat;
-    background-position: right -299px bottom;
-  }
-  .projects-btn {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
-@media screen and (max-width: 650px) {
-  .works-list {
-    text-align: center;
-  }
-  .works {
-    background-image: url(../images/svg/ovalimage.svg);
-    background-repeat: no-repeat;
-    background-position: right -400px bottom;
-  }
-}
-@media screen and (max-width: 550px) {
-  .project-works h1 {
-    font-size: 4rem;
-  }
-  .projects-list {
-    display: block;
-  }
-  .projects-card-img,
-  .projects-card {
-    max-width: 570px;
-    width: 100%;
-  }
+@media screen and (max-width: 768px) {
   .contact-wrapper {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .contact-wrapper div {
-    margin-bottom: 4.8rem;
-  }
-  h1 {
-    font-size: 7.2rem;
-    margin-bottom: 2rem;
   }
 }/*# sourceMappingURL=style.css.map */

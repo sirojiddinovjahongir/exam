@@ -1,0 +1,109 @@
+.contact {
+  position: relative;
+  background-color: $light-black-color;
+}
+
+.contact-wrapper {
+  background-image: url(../../images/svg/ovalimage.svg);
+  background-repeat: no-repeat;
+  background-position: top 320px left -300px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $light-black-color;
+  background-size: auto;
+  padding-block: 84px;
+}
+.contact-text {
+  display: flex;
+  flex-direction: column;
+}
+.contact-title {
+  color: $white-color;
+  font-family: $body-ff;
+  font-size: $heading-xl-fs;
+  font-style: normal;
+  font-weight: $body-fw;
+  line-height: $heading-xl-lh;
+  letter-spacing: $heading-xl-ls;
+}
+.contact-description {
+  width: 445px;
+  height: 84px;
+  color: $white-black-color;
+  font-family: $body-ff;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.55;
+  margin-top: 3.6rem;
+}
+.contact-control {
+  position: relative;
+  margin-block-end: 16px;
+  width: 445px;
+}
+.contact-control input,
+.contact-control textarea {
+  width: 100%;
+  padding-block: 16px;
+  padding-inline: 24px;
+  border: none;
+  border-bottom: 1px solid $white-color;
+  background: transparent;
+  font-size: 1rem;
+  line-height: 1.625;
+  color: $white-color;
+}
+.contact-control > *::placeholder {
+  color: $white-color;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.contact-control textarea {
+  margin-block-end: 32px;
+}
+.contact-control.align-right {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.button-text {
+  position: relative;
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    background-color: $light-green-color;
+  }
+}
+.contact-control:hover {
+  position: relative;
+  &::before {
+    display: inline-block;
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: $light-green-color;
+    bottom: 0;
+    transition: 0.4s;
+  }
+  &:hover::before {
+    width: 100%;
+  }
+}
+.contact-control button {
+  background-color: transparent;
+  border: none;
+}
+.contact-control:hover {
+}
+@media screen and (max-width: 768px) {
+  .contact-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
